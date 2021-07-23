@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Covid Severity Index</title>
+</head>
+<body>
+    <div class="container">
+        <span class="heading">Covid Severity Index</span>
+        <span id="info">Use the sliders to enter value, if value lies beyond range, enter manually.</span>
+        
+        
+        <div class="values">
+            <span class="value">
+                <label for="result">Respiratory Rate</label><br>
+                <input type="range" id="res-rate" min="10" max="30" oninput="sliderCompute()">
+                <input type="text" id="res-rate-val" class="colorVal" min="0" max="255" placeholder=""  oninput="textValueCompute()">
+            </span>
+            <span class="value">
+                <label for="result">Oxygen Saturation (SpO2)</label><br>
+                <input type="range" id="o2-level" min="70" max="100" oninput="sliderCompute()">
+                <input type="text" id="o2-level-val" class="colorVal" min="0" max="255" placeholder=""  oninput="textValueCompute()">
+            </span><span class="value">
+                <label for="result">O2 Flow Rate</label><br>
+                <input type="range" id="o2-flow" min="0" max="15" oninput="sliderCompute()">
+                <input type="text" id="o2-flow-val" class="colorVal" min="0" max="255" placeholder=""  oninput="textValueCompute()">
+            </span>
+        </div>
+        <div class="result">
+            <span>
+                <label for="qCSI">qCSI</label>
+                <input name="qCSI" id="qCSI" type="text" placeholder=" " readonly> 
+            </span>
+            <span>
+                <label for="risk-level">Risk Level</label>
+                <input name="risk-level" id="risk-level" type="text" placeholder=" " readonly> 
+            </span>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
